@@ -24,7 +24,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1331,1002</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1477,2904</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>QIPSDataEntry_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -104,42 +104,41 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Enters the text fields in QIPS data entry screen. CHeckboxes and VIN data entry is not part of this sequence. All data to be entered in QIPS should be passed as input argument. Only client ID and issue date are mandatory input.  If any argument is left blank , corresponding field will be left blank in QIPS." DisplayName="QIPSDataEntry" sap:VirtualizedContainerService.HintSize="518,937" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Enters the text fields in QIPS data entry screen. CHeckboxes and VIN data entry is not part of this sequence. All data to be entered in QIPS should be passed as input argument. Only client ID and issue date are mandatory input.  If any argument is left blank , corresponding field will be left blank in QIPS." DisplayName="QIPSDataEntry" sap:VirtualizedContainerService.HintSize="646,2839" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="456,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;ClientID: &quot;+in_ClientID+&quot; ,  IssueDate: &quot;+in_IssueDate+&quot; ,  AgencyName: &quot;+in_AgencyName+&quot; ,  PhoneNumber: &quot;+in_PhoneNumber+&quot; ,  PhExtention: &quot;+in_PhExtention+&quot; ,  AgentName: &quot;+in_AgentName+&quot; ,  AgentEmail: &quot;+in_AgentEmail+&quot; ,  EffectiveDate&quot;+in_EffectiveDate+&quot; ,  ExpirationDate: &quot;+in_ExpirationDate+&quot; ,  Carrier: &quot;+in_Carrier+&quot; ,  PolicyNumber: &quot;+in_PolicyNumber+&quot; ,  splitEffectiveDate: &quot;+in_SplitEffectiveDate+&quot; ,  SplitExpirationDate: &quot;+in_SplitExpirationDate+&quot; ,  SplitPolicyCarrierName: &quot;+in_SplitPolicyCarrierName+&quot; ,  SplitPolicyNumber: &quot;+in_SplitPolicyNumber+&quot; ,  PropertyLimit: &quot;+in_PropertyLimit+&quot; ,  LiabilityLimit: &quot;+in_LiabilityLimit+&quot; ,  CompDed: &quot;+in_CompDed+&quot; ,  CollisionDed: &quot;+in_CollisionDed]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,546" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="584,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;ClientID: &quot;+in_ClientID+&quot; ,  IssueDate: &quot;+in_IssueDate+&quot; ,  AgencyName: &quot;+in_AgencyName+&quot; ,  PhoneNumber: &quot;+in_PhoneNumber+&quot; ,  PhExtention: &quot;+in_PhExtention+&quot; ,  AgentName: &quot;+in_AgentName+&quot; ,  AgentEmail: &quot;+in_AgentEmail+&quot; ,  EffectiveDate&quot;+in_EffectiveDate+&quot; ,  ExpirationDate: &quot;+in_ExpirationDate+&quot; ,  Carrier: &quot;+in_Carrier+&quot; ,  PolicyNumber: &quot;+in_PolicyNumber+&quot; ,  splitEffectiveDate: &quot;+in_SplitEffectiveDate+&quot; ,  SplitExpirationDate: &quot;+in_SplitExpirationDate+&quot; ,  SplitPolicyCarrierName: &quot;+in_SplitPolicyCarrierName+&quot; ,  SplitPolicyNumber: &quot;+in_SplitPolicyNumber+&quot; ,  PropertyLimit: &quot;+in_PropertyLimit+&quot; ,  LiabilityLimit: &quot;+in_LiabilityLimit+&quot; ,  CompDed: &quot;+in_CompDed+&quot; ,  CollisionDed: &quot;+in_CollisionDed]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,2463" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Input mode windows message is best suited for QIPS application. Hardware event causes some data to be written in the same textbox frequently. Simulate does nto trigges automatic field validation. &#xA;When adding new type into activities , reset input mode to same as app/browser" AttachMode="ByInstance" DisplayName="QIPS App window" sap:VirtualizedContainerService.HintSize="546,2233" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" ScopeGuid="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Version="V1">
+        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Input mode windows message is best suited for QIPS application. Hardware event causes some data to be written in the same textbox frequently. Simulate does nto trigges automatic field validation. &#xA;When adding new type into activities , reset input mode to same as app/browser" AttachMode="ByInstance" DisplayName="QIPS App window" sap:VirtualizedContainerService.HintSize="546,2235" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" ScopeGuid="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1871" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1873" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Mandatory Fields Input validations try catch" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                <Sequence DisplayName="Mandatory Fields Input validations try catch" sap:VirtualizedContainerService.HintSize="500,399" sap2010:WorkflowViewState.IdRef="Sequence_48">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,493" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <TryCatch.Try>
-                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:10">
                         <ui:RetryScope.ActivityBody>
                           <ActivityAction>
                             <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,244" sap2010:WorkflowViewState.IdRef="Sequence_49">
@@ -185,10 +184,10 @@
                       </ui:RetryScope>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,330" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -196,7 +195,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence sap:VirtualizedContainerService.HintSize="416,261" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                          <Sequence sap:VirtualizedContainerService.HintSize="416,257" sap2010:WorkflowViewState.IdRef="Sequence_50">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -882,10 +881,10 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,383" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -907,7 +906,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="456,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="584,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,160" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <sap:WorkflowViewStateService.ViewState>
@@ -921,7 +920,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
