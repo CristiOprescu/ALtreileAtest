@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2071,6356</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2415,9325</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -118,16 +118,15 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="2081,6291" sap2010:WorkflowViewState.IdRef="Sequence_59">
+  <Sequence sap:VirtualizedContainerService.HintSize="2425,9260" sap2010:WorkflowViewState.IdRef="Sequence_59">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2019,6180" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2363,9149" sap2010:WorkflowViewState.IdRef="TryCatch_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,7 +134,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Document Processing" sap:VirtualizedContainerService.HintSize="1981,5952" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence DisplayName="Document Processing" sap:VirtualizedContainerService.HintSize="2325,8921" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="DocClassificationConfigFolderPath" />
             <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomy" />
@@ -161,8 +160,8 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1919,92" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Start Document Processing..&quot;]" />
-          <Assign sap:VirtualizedContainerService.HintSize="1919,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2263,92" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Start Document Processing..&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="2263,82" sap2010:WorkflowViewState.IdRef="Assign_15">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[DocClassificationConfigFolderPath]</OutArgument>
             </Assign.To>
@@ -170,7 +169,7 @@
               <InArgument x:TypeArguments="x:String">\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\DocumentClassificationConfig</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:MultipleAssign DisplayName="Multiple Assign - FOr testing" sap:VirtualizedContainerService.HintSize="1919,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+          <ui:MultipleAssign DisplayName="Multiple Assign - FOr testing" sap:VirtualizedContainerService.HintSize="2263,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -222,14 +221,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1919,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="2263,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\Processor_Config_DEV.xlsx</InArgument>
               <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants","DocumentUnderstanding"}]</InArgument>
               <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[in_Config]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1919,52" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2263,52" sap2010:WorkflowViewState.IdRef="CommentOut_10">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,241" sap2010:WorkflowViewState.IdRef="Sequence_33">
                 <sap:WorkflowViewStateService.ViewState>
@@ -247,10 +246,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1919,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Loading taxonomy..&quot;]" />
-          <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="1919,104" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_3" Taxonomy="[taxonomy]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1919,92" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Digitize document..&quot;]" />
-          <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="1919,297" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2263,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Loading taxonomy..&quot;]" />
+          <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="2263,104" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_3" Taxonomy="[taxonomy]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2263,92" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Digitize document..&quot;]" />
+          <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="2263,297" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
             <p:DigitizeDocument.OCREngine>
               <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
                 <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="[OCRkey]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_2" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="[OCRTimeOut]">
@@ -272,8 +271,8 @@
               </ActivityFunc>
             </p:DigitizeDocument.OCREngine>
           </p:DigitizeDocument>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1919,92" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Number of pages: &quot;+Convert.ToString(DOM.Pages.Count)]" />
-          <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="1919,532" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2263,92" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Number of pages: &quot;+Convert.ToString(DOM.Pages.Count)]" />
+          <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="2263,532" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;\&quot;acord25\&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;\&quot;acord23\&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
             <p2:ClassifyDocumentScope.Classifiers>
               <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="234,210" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_3" LearningFilePath="DocumentProcessing\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
                 <p2:IntelligentKeywordClassifier.ClassifierResult>
@@ -327,7 +326,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p2:ClassifyDocumentScope>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1919,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2263,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="540,176" sap2010:WorkflowViewState.IdRef="Sequence_34">
                 <sap:WorkflowViewStateService.ViewState>
@@ -398,7 +397,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Assign sap:VirtualizedContainerService.HintSize="1919,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+          <Assign sap:VirtualizedContainerService.HintSize="2263,82" sap2010:WorkflowViewState.IdRef="Assign_16">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[PageMatchCounter]</OutArgument>
             </Assign.To>
@@ -406,20 +405,20 @@
               <InArgument x:TypeArguments="x:Int32">1</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="p5:ClassificationResult" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1919,3521" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[classificationResults]">
+          <ui:ForEach x:TypeArguments="p5:ClassificationResult" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="2263,6490" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[classificationResults]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="p5:ClassificationResult">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="p5:ClassificationResult" Name="currentItem" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1883,3395" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                <Sequence sap:VirtualizedContainerService.HintSize="2227,6364" sap2010:WorkflowViewState.IdRef="Sequence_57">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1821,92" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Accord form type :: &quot; + currentItem.DocumentTypeId + &quot;:: at PageCount :-&quot; +PageMatchCounter.ToString]" />
-                  <If Condition="[currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord23&quot;) OrElse currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord25&quot;) orElse currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord27&quot;)]" DisplayName="If Document Type is Acord Type form" sap:VirtualizedContainerService.HintSize="1821,3163" sap2010:WorkflowViewState.IdRef="If_6">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2165,92" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Accord form type :: &quot; + currentItem.DocumentTypeId + &quot;:: at PageCount :-&quot; +PageMatchCounter.ToString]" />
+                  <If Condition="[currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord23&quot;) OrElse currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord25&quot;) orElse currentItem.DocumentTypeId.Contains(&quot;ses.coi.acord27&quot;)]" DisplayName="If Document Type is Acord Type form" sap:VirtualizedContainerService.HintSize="2165,6132" sap2010:WorkflowViewState.IdRef="If_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
