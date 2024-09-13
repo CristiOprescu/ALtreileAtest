@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DataTransalation_ACORD27" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DataTransalation_ACORD27" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ExtractionResult" Type="InArgument(p:ExtractionResult)" />
     <x:Property Name="out_Fields" Type="OutArgument(x:String)" />
@@ -12,56 +12,55 @@
   <this:DataTransalation_ACORD27.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:DataTransalation_ACORD27.in_Config>
-  <mva:VisualBasic.Settings>
+  <VisualBasic.Settings>
     <x:Null />
-  </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2493,12205</sap:VirtualizedContainerService.HintSize>
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2493,13045</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DataTransalation_ACORD27_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
-      <x:String>System.Activities</x:String>
-      <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Drawing</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Runtime.InteropServices</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
-      <x:String>UiPath.DU.Shared.Utils</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>System.Xml.Serialization</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.DU.Shared.Utils</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
-      <x:String>System.Text.RegularExpressions</x:String>
-      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
-      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -74,20 +73,26 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
@@ -108,19 +113,19 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="2503,12140" sap2010:WorkflowViewState.IdRef="Sequence_322">
+  <Sequence sap:VirtualizedContainerService.HintSize="2503,12980" sap2010:WorkflowViewState.IdRef="Sequence_322">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2441,12029" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2441,12892" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="DataTransalation_ACORD25" sap:VirtualizedContainerService.HintSize="2403,11801" sap2010:WorkflowViewState.IdRef="Sequence_85">
+        <Sequence DisplayName="DataTransalation_ACORD25" sap:VirtualizedContainerService.HintSize="2403,12641" sap2010:WorkflowViewState.IdRef="Sequence_85">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataSet" Name="extractedDataSet" />
             <Variable x:TypeArguments="sd:DataTable" Name="simpleFields" />
@@ -211,23 +216,23 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Test inputs" sap:VirtualizedContainerService.HintSize="2341,658" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Test inputs" sap:VirtualizedContainerService.HintSize="2341,690" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[in_dtKeywordConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="DU_PropertyCoverge" WorkbookPath="\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\BusinessConfiguration_DEV.xlsx" />
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[in_dtClientConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="DU_ClientGroupID" WorkbookPath="\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\BusinessConfiguration_DEV.xlsx" />
-            <Sequence DisplayName="Regex Pattern for Date fields and VIN " sap:VirtualizedContainerService.HintSize="496,307" sap2010:WorkflowViewState.IdRef="Sequence_222">
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[in_dtKeywordConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="496,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="DU_PropertyCoverge" WorkbookPath="\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\BusinessConfiguration_DEV.xlsx" />
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[in_dtClientConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="496,120" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="DU_ClientGroupID" WorkbookPath="\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\BusinessConfiguration_DEV.xlsx" />
+            <Sequence DisplayName="Regex Pattern for Date fields and VIN " sap:VirtualizedContainerService.HintSize="496,330" sap2010:WorkflowViewState.IdRef="Sequence_222">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Date Regex Pattern" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_63">
+              <Assign DisplayName="Date Regex Pattern" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_63">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[regexPatternDate]</OutArgument>
                 </Assign.To>
@@ -235,7 +240,7 @@
                   <InArgument x:TypeArguments="x:String">[in_Config("DateCleanupRegexPattern").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="VIN Regex Pattern" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_207">
+              <Assign DisplayName="VIN Regex Pattern" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_207">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[RegexMatch_VIN]</OutArgument>
                 </Assign.To>
@@ -245,7 +250,7 @@
               </Assign>
             </Sequence>
           </Sequence>
-          <Sequence DisplayName="Convert Extracted Result dataset to Datatable " sap:VirtualizedContainerService.HintSize="2341,718" sap2010:WorkflowViewState.IdRef="Sequence_213">
+          <Sequence DisplayName="Convert Extracted Result dataset to Datatable " sap:VirtualizedContainerService.HintSize="2341,799" sap2010:WorkflowViewState.IdRef="Sequence_213">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="txtSimpleFields" />
             </Sequence.Variables>
@@ -255,7 +260,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p1:ExportExtractionResults DataSet="[extractedDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[in_ExtractionResult]" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="True" IncludeOCRConfidence="False">
+            <p1:ExportExtractionResults DataSet="[extractedDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[in_ExtractionResult]" sap:VirtualizedContainerService.HintSize="450,206" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="True" IncludeOCRConfidence="False">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -263,7 +268,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </p1:ExportExtractionResults>
-            <Assign DisplayName="Assign_ Simple Fields from Extracted Results" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Assign_237">
+            <Assign DisplayName="Assign_ Simple Fields from Extracted Results" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="Assign_237">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[simpleFields]</OutArgument>
               </Assign.To>
@@ -277,7 +282,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Sequence DisplayName="Sequence - Validate Confidence Threshold Value for Fields " sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_257">
+            <Sequence DisplayName="Sequence - Validate Confidence Threshold Value for Fields " sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="Sequence_257">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -598,7 +603,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
             </Sequence>
-            <ui:OutputDataTable DataTable="[simpleFields]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[txtSimpleFields]">
+            <ui:OutputDataTable DataTable="[simpleFields]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[txtSimpleFields]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -606,7 +611,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:OutputDataTable>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Trace" Message="[&quot;Simple Fileds from Extarcted results :: &quot; +txtSimpleFields]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Trace" Message="[&quot;Simple Fileds from Extarcted results :: &quot; +txtSimpleFields]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -615,7 +620,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
           </Sequence>
-          <Sequence DisplayName="Data Augmentation for Accord 25" sap:VirtualizedContainerService.HintSize="2341,10253" sap2010:WorkflowViewState.IdRef="Sequence_84">
+          <Sequence DisplayName="Data Augmentation for Accord 25" sap:VirtualizedContainerService.HintSize="2341,11064" sap2010:WorkflowViewState.IdRef="Sequence_84">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ClientID" />
               <Variable x:TypeArguments="x:String" Name="ProducerName" />
@@ -848,7 +853,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <TryCatch DisplayName="Try Catch- MandatoryFields Exception handing" sap:VirtualizedContainerService.HintSize="2279,2121" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch- MandatoryFields Exception handing" sap:VirtualizedContainerService.HintSize="2279,2991" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -856,7 +861,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Mandatory fields - Match  Extracted Client ID to Client id mapping Sheet" sap:VirtualizedContainerService.HintSize="2241,1893" sap2010:WorkflowViewState.IdRef="Sequence_324">
+                <Sequence DisplayName="Mandatory fields - Match  Extracted Client ID to Client id mapping Sheet" sap:VirtualizedContainerService.HintSize="2241,2731" sap2010:WorkflowViewState.IdRef="Sequence_324">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -871,7 +876,7 @@
                       <InArgument x:TypeArguments="x:Int32">1</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[not string.IsNullOrEmpty(IssueDate) and not string.IsNullOrEmpty(ClientID)]" sap:VirtualizedContainerService.HintSize="2179,1195" sap2010:WorkflowViewState.IdRef="If_85">
+                  <If Condition="[not string.IsNullOrEmpty(IssueDate) and not string.IsNullOrEmpty(ClientID)]" sap:VirtualizedContainerService.HintSize="2179,1996" sap2010:WorkflowViewState.IdRef="If_85">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -879,26 +884,26 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1718,1035" sap2010:WorkflowViewState.IdRef="Sequence_330">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="784,1625" sap2010:WorkflowViewState.IdRef="Sequence_330">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtClientConfig]" DisplayName="For Each Row - Client id" sap:VirtualizedContainerService.HintSize="1656,927" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtClientConfig]" DisplayName="For Each Row - Client id" sap:VirtualizedContainerService.HintSize="722,1537" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1622,810" sap2010:WorkflowViewState.IdRef="Sequence_329">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1399" sap2010:WorkflowViewState.IdRef="Sequence_329">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[CertificateHolderName.ToLower.Contains(Convert.toString(CurrentRow(&quot;Keyword&quot;)).ToLower)]" DisplayName="If- Additional Interest fields contain client name from mapping sheet" sap:VirtualizedContainerService.HintSize="1560,702" sap2010:WorkflowViewState.IdRef="If_84">
+                                <If Condition="[CertificateHolderName.ToLower.Contains(Convert.toString(CurrentRow(&quot;Keyword&quot;)).ToLower)]" DisplayName="If- Additional Interest fields contain client name from mapping sheet" sap:VirtualizedContainerService.HintSize="626,1311" sap2010:WorkflowViewState.IdRef="If_84">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -906,7 +911,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="496,371" sap2010:WorkflowViewState.IdRef="Sequence_323">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,423" sap2010:WorkflowViewState.IdRef="Sequence_323">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="addtionalInterest" />
                                       </Sequence.Variables>
@@ -915,7 +920,7 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Assign- ClientID" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_333">
+                                      <Assign DisplayName="Assign- ClientID" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_333">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[ClientID]</OutArgument>
                                         </Assign.To>
@@ -923,36 +928,36 @@
                                           <InArgument x:TypeArguments="x:String">[CurrentRow("ClientGroupID").ToString]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info" Message="[&quot; Client/Group ID matched: &quot;+ Convert.ToString(CurrentRow(&quot;Keyword&quot;))+&quot; - client &quot;+ClientID]" />
-                                      <ui:Break sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Break_35" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info" Message="[&quot; Client/Group ID matched: &quot;+ Convert.ToString(CurrentRow(&quot;Keyword&quot;))+&quot; - client &quot;+ClientID]" />
+                                      <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_35" />
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="1019,542" sap2010:WorkflowViewState.IdRef="Sequence_328">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,727" sap2010:WorkflowViewState.IdRef="Sequence_328">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <If Condition="[ClientIDMatchCount.Equals(in_dtClientConfig.RowCount)]" sap:VirtualizedContainerService.HintSize="957,350" sap2010:WorkflowViewState.IdRef="If_83">
+                                      <If Condition="[ClientIDMatchCount.Equals(in_dtClientConfig.RowCount)]" sap:VirtualizedContainerService.HintSize="530,564" sap2010:WorkflowViewState.IdRef="If_83">
                                         <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_325">
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_325">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Throw DisplayName="Throw- BRE " Exception="[New BusinessRuleException(&quot;Extracted Client ID does not match with clientID List&quot;)]" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                            <Throw DisplayName="Throw- BRE " Exception="[New BusinessRuleException(&quot;Extracted Client ID does not match with clientID List&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_326">
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_326">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_334">
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_334">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Int32">[ClientIDMatchCount]</OutArgument>
                                               </Assign.To>
@@ -963,7 +968,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="957,52" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,75" sap2010:WorkflowViewState.IdRef="CommentOut_14">
                                         <ui:CommentOut.Body>
                                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_327">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -1004,17 +1009,17 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_331">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_331">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw-BRE" Exception="[New BusinessRuleException(&quot;Mandatory Fields :: ClientID/Issue date is not available fo thisr acord form&quot;)]" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        <Throw DisplayName="Throw-BRE" Exception="[New BusinessRuleException(&quot;Mandatory Fields :: ClientID/Issue date is not available fo thisr acord form&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2179,92" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Info" Message="[&quot;Client: &quot;+ClientID]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2179,173" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Info" Message="[&quot;Client: &quot;+ClientID]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1022,7 +1027,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <Assign DisplayName="Mandatory-Issue date" sap:VirtualizedContainerService.HintSize="2179,82" sap2010:WorkflowViewState.IdRef="Assign_336">
+                  <Assign DisplayName="Mandatory-Issue date" sap:VirtualizedContainerService.HintSize="2179,114" sap2010:WorkflowViewState.IdRef="Assign_336">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[IssueDate]</OutArgument>
                     </Assign.To>
@@ -1030,7 +1035,7 @@
                       <InArgument x:TypeArguments="x:String">[Convert.ToString(simpleFields(0)("Document Date"))]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Clean Up date" sap:VirtualizedContainerService.HintSize="2179,82" sap2010:WorkflowViewState.IdRef="Assign_337">
+                  <Assign DisplayName="Clean Up date" sap:VirtualizedContainerService.HintSize="2179,114" sap2010:WorkflowViewState.IdRef="Assign_337">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[IssueDate]</OutArgument>
                     </Assign.To>
@@ -1038,7 +1043,7 @@
                       <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(IssueDate),"",System.text.RegularExpressions.Regex.Replace(IssueDate,regexPatternDate,""))]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2179,92" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="Info" Message="[&quot;IssueDate :: &quot;+ IssueDate]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2179,164" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="Info" Message="[&quot;IssueDate :: &quot;+ IssueDate]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1049,7 +1054,7 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="2245,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1060,26 +1065,26 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Rethrow sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                    <Rethrow sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <Sequence DisplayName="Data Augmentation" sap:VirtualizedContainerService.HintSize="2279,6703" sap2010:WorkflowViewState.IdRef="Sequence_71">
+            <Sequence DisplayName="Data Augmentation" sap:VirtualizedContainerService.HintSize="2279,6810" sap2010:WorkflowViewState.IdRef="Sequence_71">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Multiple Coverage Details" sap:VirtualizedContainerService.HintSize="1959,6592" sap2010:WorkflowViewState.IdRef="Sequence_69">
+              <Sequence DisplayName="Multiple Coverage Details" sap:VirtualizedContainerService.HintSize="1959,6690" sap2010:WorkflowViewState.IdRef="Sequence_69">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Sequence_Item table from extracted data" sap:VirtualizedContainerService.HintSize="1897,435" sap2010:WorkflowViewState.IdRef="Sequence_219">
+                <Sequence DisplayName="Sequence_Item table from extracted data" sap:VirtualizedContainerService.HintSize="1897,380" sap2010:WorkflowViewState.IdRef="Sequence_219">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="TxtItemTable" />
                   </Sequence.Variables>
@@ -1106,7 +1111,7 @@
                   <ui:OutputDataTable DataTable="[itemTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[TxtItemTable]" />
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_64" Level="Trace" Message="[&quot;item table from extracted results :: &quot; +TxtItemTable]" />
                 </Sequence>
-                <Sequence DisplayName="Read Keywords From Business config sheets and assign to the datatable" sap:VirtualizedContainerService.HintSize="1733.33333333333,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                <Sequence DisplayName="Read Keywords From Business config sheets and assign to the datatable" sap:VirtualizedContainerService.HintSize="1897,113" sap2010:WorkflowViewState.IdRef="Sequence_88">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1175,20 +1180,20 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                   </Assign>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="420.666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Info" Message="[&quot;Theft Keyword list :: &quot; +lstTheftKeywords.ToString + &quot;\n\n&quot; + &quot;Property Keyword list :: &quot;+ lstPropertyKeywords.ToString + &quot;\n\n&quot; +&quot;Liability keyword lists :: &quot; +lstLiabilityKeywords.ToString +&quot;Additional Insured keyword list :: &quot;+ lstAdditionalInsuredKeywords.ToString + &quot;\n\n&quot; + &quot;LossPayee Keyword Lists :: &quot; +lstLossPayeeKeywords.ToString + &quot;\n\n&quot; + &quot;AOIA keyword list :: &quot;+ lstAOIAKeywords.ToString]" />
                 </Sequence>
-                <Sequence DisplayName="Property limit/CompDed/CollisionDed" sap:VirtualizedContainerService.HintSize="1897.33333333333,5780" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                <Sequence DisplayName="Property limit/CompDed/CollisionDed" sap:VirtualizedContainerService.HintSize="1897,5982" sap2010:WorkflowViewState.IdRef="Sequence_93">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[itemTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1835.33333333333,5669.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[itemTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1835,5862" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1801.33333333333,5549.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1801,5722" sap2010:WorkflowViewState.IdRef="Sequence_92">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="BoolTypeOfInsurance" />
                           </Sequence.Variables>
@@ -1205,8 +1210,8 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                               <InArgument x:TypeArguments="x:Boolean">[lstPropertyKeywords.any(Function(x) Convert.ToString(item("Type of Insurance")).tolower.Contains(x.ToLower))]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1739.33333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Info" Message="[&quot;Insurance type contains propertry information is :: &quot; +BoolTypeOfInsurance.ToString]" />
-                          <If Condition="[BoolTypeOfInsurance]" DisplayName="If Type of insurance is Physical damage or property" sap:VirtualizedContainerService.HintSize="1739.33333333333,5199.33333333333" sap2010:WorkflowViewState.IdRef="If_21">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1739,173" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Info" Message="[&quot;Insurance type contains propertry information is :: &quot; +BoolTypeOfInsurance.ToString]" />
+                          <If Condition="[BoolTypeOfInsurance]" DisplayName="If Type of insurance is Physical damage or property" sap:VirtualizedContainerService.HintSize="1739,5398" sap2010:WorkflowViewState.IdRef="If_21">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1214,7 +1219,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence DisplayName="Extract Multiple coverage Details" sap:VirtualizedContainerService.HintSize="1134,5034" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                              <Sequence DisplayName="Extract Multiple coverage Details" sap:VirtualizedContainerService.HintSize="1134,3764" sap2010:WorkflowViewState.IdRef="Sequence_90">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1673,7 +1678,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                     </If.Else>
                                   </If>
                                 </Sequence>
-                                <If Condition="[Comp_CollisionDed.Contains(&quot;$&quot;)]" DisplayName="If- Comp_CollisionDed contains $ then divide the amout by 2 for comp and col ded" sap:VirtualizedContainerService.HintSize="1072,682" sap2010:WorkflowViewState.IdRef="If_56">
+                                <If Condition="[Comp_CollisionDed.Contains(&quot;$&quot;)]" DisplayName="If- Comp_CollisionDed contains $ then divide the amout by 2 for comp and col ded" sap:VirtualizedContainerService.HintSize="1072,1023" sap2010:WorkflowViewState.IdRef="If_56">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1681,7 +1686,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Assignhalf value for each comp col" sap:VirtualizedContainerService.HintSize="400,516.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_202">
+                                    <Sequence DisplayName="Assignhalf value for each comp col" sap:VirtualizedContainerService.HintSize="416,373" sap2010:WorkflowViewState.IdRef="Sequence_202">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1715,13 +1720,13 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Assign value for Comp-collision each " sap:VirtualizedContainerService.HintSize="400,413.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                                    <Sequence DisplayName="Assign value for Comp-collision each " sap:VirtualizedContainerService.HintSize="496,480" sap2010:WorkflowViewState.IdRef="Sequence_203">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Assign- Comp_Ded" sap:VirtualizedContainerService.HintSize="338,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_215">
+                                      <Assign DisplayName="Assign- Comp_Ded" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_215">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Double">[Comp_Ded]</OutArgument>
                                         </Assign.To>
@@ -1729,7 +1734,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                           <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(Comp_CollisionDed)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <Assign DisplayName="Assign- Collision_Ded" sap:VirtualizedContainerService.HintSize="338,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_216">
+                                      <Assign DisplayName="Assign- Collision_Ded" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_216">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Double">[Collision_Ded]</OutArgument>
                                         </Assign.To>
@@ -1737,26 +1742,26 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                           <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(Comp_CollisionDed)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Trace" Message="[&quot;Comp Ded :: &quot;+Comp_Ded.ToString + &quot; and Collision Ded :: &quot;+ Collision_Ded.ToString]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Trace" Message="[&quot;Comp Ded :: &quot;+Comp_Ded.ToString + &quot; and Collision Ded :: &quot;+ Collision_Ded.ToString]" />
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <Sequence DisplayName="Extract Carrier and Split carrier fields" sap:VirtualizedContainerService.HintSize="1072,3031.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_186">
+                                <Sequence DisplayName="Extract Carrier and Split carrier fields" sap:VirtualizedContainerService.HintSize="1072,1820" sap2010:WorkflowViewState.IdRef="Sequence_186">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOut DisplayName="Validating confidence and then assiging this value in below Seq Comment Out" sap:VirtualizedContainerService.HintSize="1010,316" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                  <ui:CommentOut DisplayName="Validating confidence and then assiging this value in below Seq Comment Out" sap:VirtualizedContainerService.HintSize="532,346" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                                     <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,236" sap2010:WorkflowViewState.IdRef="Sequence_266">
+                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,235" sap2010:WorkflowViewState.IdRef="Sequence_266">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap2010:Annotation.AnnotationText="Dedecutuble is applicable to vehicle/liability. So if liabilitylimit is obtained, look for collision and comp DED" DisplayName="Assign- InsurerLetter" sap:VirtualizedContainerService.HintSize="338,125.333333333333" sap2010:WorkflowViewState.IdRef="Assign_157">
+                                        <Assign sap2010:Annotation.AnnotationText="Dedecutuble is applicable to vehicle/liability. So if liabilitylimit is obtained, look for collision and comp DED" DisplayName="Assign- InsurerLetter" sap:VirtualizedContainerService.HintSize="434,147" sap2010:WorkflowViewState.IdRef="Assign_157">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[InsurerLetter]</OutArgument>
                                           </Assign.To>
@@ -1772,7 +1777,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </Sequence>
                                     </ui:CommentOut.Body>
                                   </ui:CommentOut>
-                                  <Sequence DisplayName="Sequence - Validating confidence level for InsurerLetter" sap:VirtualizedContainerService.HintSize="1010,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_269">
+                                  <Sequence DisplayName="Sequence - Validating confidence level for InsurerLetter" sap:VirtualizedContainerService.HintSize="532,113" sap2010:WorkflowViewState.IdRef="Sequence_269">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1843,8 +1848,8 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </If.Else>
                                     </If>
                                   </Sequence>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1010,96" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info" Message="[&quot;Insurer letter for Carrier name :: &quot; + InsurerLetter]" />
-                                  <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[InsurerLetter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="1010,1417.33333333333" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,173" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info" Message="[&quot;Insurer letter for Carrier name :: &quot; + InsurerLetter]" />
+                                  <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[InsurerLetter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="532,308" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                                     <Switch.Default>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_169">
                                         <Assign.To>
@@ -2633,8 +2638,8 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </Sequence>
                                     </Sequence>
                                   </Switch>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1010,96" sap2010:WorkflowViewState.IdRef="LogMessage_71" Level="Info" Message="[&quot;Carrier name :: &quot; + InsurerName]" />
-                                  <Assign sap2010:Annotation.AnnotationText="" DisplayName="Assign- SplitInsurerletter" sap:VirtualizedContainerService.HintSize="1010,94" sap2010:WorkflowViewState.IdRef="Assign_158">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,173" sap2010:WorkflowViewState.IdRef="LogMessage_71" Level="Info" Message="[&quot;Carrier name :: &quot; + InsurerName]" />
+                                  <Assign sap2010:Annotation.AnnotationText="" DisplayName="Assign- SplitInsurerletter" sap:VirtualizedContainerService.HintSize="532,115" sap2010:WorkflowViewState.IdRef="Assign_158">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[SplitInsurerletter]</OutArgument>
                                     </Assign.To>
@@ -2649,8 +2654,8 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1010,96" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Info" Message="[&quot;Split Carrier name :: &quot; + SplitInsurerName]" />
-                                  <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[SplitInsurerletter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="1010,440.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,173" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Info" Message="[&quot;Split Carrier name :: &quot; + SplitInsurerName]" />
+                                  <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[SplitInsurerletter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="532,299" sap2010:WorkflowViewState.IdRef="Switch`1_9">
                                     <Switch.Default>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_227">
                                         <Assign.To>
@@ -2755,11 +2760,11 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                     </Assign>
                                   </Switch>
                                 </Sequence>
-                                <ui:Break sap:VirtualizedContainerService.HintSize="1072,25.3333333333333" sap2010:WorkflowViewState.IdRef="Break_16" />
+                                <ui:Break sap:VirtualizedContainerService.HintSize="1072,48" sap2010:WorkflowViewState.IdRef="Break_16" />
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Extract Single coverage Details" sap:VirtualizedContainerService.HintSize="559.333333333333,1738.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                              <Sequence DisplayName="Extract Single coverage Details" sap:VirtualizedContainerService.HintSize="559,1473" sap2010:WorkflowViewState.IdRef="Sequence_91">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="LiabilityLimit" />
                                 </Sequence.Variables>
@@ -2832,7 +2837,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_72" Level="Info" Message="[&quot;Insurer letter for Carrier name :: &quot; + InsurerLetter]" />
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[InsurerLetter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="497.333333333333,310" sap2010:WorkflowViewState.IdRef="Switch`1_10">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch Insurer name as per insurer letter" Expression="[InsurerLetter.ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="497,324" sap2010:WorkflowViewState.IdRef="Switch`1_10">
                                   <Switch.Default>
                                     <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_236">
                                       <Assign.To>
@@ -2849,13 +2854,13 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence x:Key="A" sap:VirtualizedContainerService.HintSize="496,171.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_209">
+                                  <Sequence x:Key="A" sap:VirtualizedContainerService.HintSize="496,191" sap2010:WorkflowViewState.IdRef="Sequence_209">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="338,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_228">
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_228">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                       </Assign.To>
@@ -2864,7 +2869,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                   </Sequence>
-                                  <Assign x:Key="B" sap:VirtualizedContainerService.HintSize="262,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_229">
+                                  <Assign x:Key="B" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_229">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2872,7 +2877,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <InArgument x:TypeArguments="x:String">[itemTable.Rows(1).Item("Insurer").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <Assign x:Key="C" sap:VirtualizedContainerService.HintSize="262,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_230">
+                                  <Assign x:Key="C" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_230">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2880,7 +2885,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <InArgument x:TypeArguments="x:String">[itemTable.Rows(2).Item("Insurer").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <Assign x:Key="D" sap:VirtualizedContainerService.HintSize="262,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_231">
+                                  <Assign x:Key="D" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_231">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2888,7 +2893,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <InArgument x:TypeArguments="x:String">[itemTable.Rows(3).Item("Insurer").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <Assign x:Key="E" sap:VirtualizedContainerService.HintSize="262,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_232">
+                                  <Assign x:Key="E" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_232">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2896,19 +2901,19 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <InArgument x:TypeArguments="x:String">[itemTable.Rows(4).Item("Insurer").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <Sequence x:Key="F" sap:VirtualizedContainerService.HintSize="558,302.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_211">
+                                  <Sequence x:Key="F" sap:VirtualizedContainerService.HintSize="558,280" sap2010:WorkflowViewState.IdRef="Sequence_211">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="496,216" sap2010:WorkflowViewState.IdRef="Sequence_210">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_233">
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_233">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                         </Assign.To>
@@ -2918,7 +2923,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       </Assign>
                                     </Sequence>
                                   </Sequence>
-                                  <Assign x:Key="G" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_234">
+                                  <Assign x:Key="G" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_234">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2926,7 +2931,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                       <InArgument x:TypeArguments="x:String">[itemTable.Rows(6).Item("Insurer").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <Assign x:Key="H" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_235">
+                                  <Assign x:Key="H" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_235">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[InsurerName]</OutArgument>
                                     </Assign.To>
@@ -2935,8 +2940,8 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </Switch>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,92" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="Info" Message="[&quot;Carrier name :: &quot; + InsurerName]" />
-                                <Assign DisplayName="Assign-CGLEachOccurence" sap:VirtualizedContainerService.HintSize="497,81" sap2010:WorkflowViewState.IdRef="Assign_123">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,173" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="Info" Message="[&quot;Carrier name :: &quot; + InsurerName]" />
+                                <Assign DisplayName="Assign-CGLEachOccurence" sap:VirtualizedContainerService.HintSize="497,105" sap2010:WorkflowViewState.IdRef="Assign_123">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[CGLEachOccurence]</OutArgument>
                                   </Assign.To>
@@ -2958,7 +2963,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
                 </Sequence>
-                <Sequence DisplayName="FInd and Match Theft /Additional Insured/Loss payee/AOIA details" sap:VirtualizedContainerService.HintSize="1897.33333333333,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                <Sequence DisplayName="FInd and Match Theft /Additional Insured/Loss payee/AOIA details" sap:VirtualizedContainerService.HintSize="1897,104" sap2010:WorkflowViewState.IdRef="Sequence_140">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3464,52 +3469,19 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
                 </Sequence>
               </Sequence>
             </Sequence>
-            <Sequence DisplayName="Store All the Fields value in one Dictionary object for QIPS entry" sap:VirtualizedContainerService.HintSize="2021.33333333333,313.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_223">
+            <Sequence DisplayName="Store All the Fields value in one Dictionary object for QIPS entry" sap:VirtualizedContainerService.HintSize="2279,275" sap2010:WorkflowViewState.IdRef="Sequence_223">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="378.666666666667,66.6666666666667" sap2010:WorkflowViewState.IdRef="Assign_247">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_QIPSFields_Accord23]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[New Dictionary(Of String, String) From {
-{"ClientID",ClientID},
-{"IssueDate",IssueDate},
-{"AgencyName",ProducerName},
-{"PhoneNumber",ContactPhone},
-{"PhExtention",in_PhExtention},
-{"AgentName",ContactName},
-{"AgentEmail",ContactEmail},
-{"EffectiveDate",EffectiveDate},
-{"ExpirationDate",ExpirationDate},
-{"Carrier",InsurerName},
-{"PolicyNumber",PolicyNumber},
-{"SplitEffectiveDate",Split_Effective_Date},
-{"SplitExpirationDate",SplitExpirationDate },
-{"SplitPolicyCarrierName",SplitInsurerName},
-{"SplitPolicyNumber",Split_Policy_Number},
-{"PropertyLimit",Property_PhysicalDamage_Limit},
-{"LiabilityLimit",LiabilityLimit},
-{"CompDed",convert.ToString(Comp_Ded)},
-{"CollisionDed",convert.ToString(Collision_Ded)},
-{"Theft",Convert.ToString(boolTheft)},
-{"LossPayee",Convert.ToString(boolLossPayee)},
-{"AdditionalInsured",Convert.ToString(boolAdditionalInsured)},
-{"AOIA",Convert.ToString(boolAOIA)},
-{"VIN",VIN}
-}]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="378.666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;QIPS fields for Accord 25 are :: &quot; + out_QIPSFields_Accord23.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;QIPS fields for Accord 25 are :: &quot; + out_QIPSFields_Accord23.ToString]" />
             </Sequence>
           </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="2407,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="2407,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3520,7 +3492,7 @@ Select Convert.ToString(r("Theft Coverage")).trim).ToList]</InArgument>
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Rethrow sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            <Rethrow sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>

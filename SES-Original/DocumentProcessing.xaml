@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="StorageBucketName" Type="InArgument(x:String)" />
     <x:Property Name="StoragePath" Type="InArgument(x:String)" />
@@ -7,67 +7,66 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_MessageID" Type="InArgument(x:String)" />
   </x:Members>
-  <mva:VisualBasic.Settings>
+  <VisualBasic.Settings>
     <x:Null />
-  </mva:VisualBasic.Settings>
+  </VisualBasic.Settings>
   <sap:VirtualizedContainerService.HintSize>2071,6356</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
-      <x:String>System.Activities</x:String>
-      <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Drawing</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
-      <x:String>System.Xml</x:String>
-      <x:String>System.Xml.Linq</x:String>
-      <x:String>UiPath.Core</x:String>
-      <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
-      <x:String>UiPath.Vision.OCR</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.OCR.Contracts</x:String>
-      <x:String>UiPath.OCR.Activities</x:String>
-      <x:String>UiPath.OCR.Contracts.Activities</x:String>
-      <x:String>UiPath.Platform.ResourceHandling</x:String>
-      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Actions</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
       <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
       <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
       <x:String>UiPath.DU.Shared.Utils</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Actions</x:String>
       <x:String>UiPath.IntelligentOCR.Activities</x:String>
-      <x:String>System.Security</x:String>
-      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -80,17 +79,26 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
@@ -117,6 +125,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -139,7 +148,7 @@
             <Variable x:TypeArguments="x:String" Name="DocClassificationConfigFolderPath" />
             <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomy" />
             <Variable x:TypeArguments="x:String" Name="inputFilePath" />
-            <Variable x:TypeArguments="p4:Document" Name="DOM" />
+            <Variable x:TypeArguments="p3:Document" Name="DOM" />
             <Variable x:TypeArguments="x:String" Name="documentText" />
             <Variable x:TypeArguments="x:String" Name="OCRkey" />
             <Variable x:TypeArguments="x:String" Name="intelliKeywordClassTrainFile" />
@@ -251,7 +260,7 @@
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1919,92" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Digitize document..&quot;]" />
           <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="1919,297" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
             <p:DigitizeDocument.OCREngine>
-              <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
+              <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
                 <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="[OCRkey]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_2" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="[OCRTimeOut]">
                   <p1:UiPathDocumentOCR.Image>
                     <InArgument x:TypeArguments="sd:Image">
@@ -276,16 +285,16 @@
             <p2:ClassifyDocumentScope.Classifiers>
               <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="234,210" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_3" LearningFilePath="DocumentProcessing\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
                 <p2:IntelligentKeywordClassifier.ClassifierResult>
-                  <OutArgument x:TypeArguments="p3:ClassifierResult">
-                    <DelegateArgumentReference x:TypeArguments="p3:ClassifierResult">
-                      <DelegateOutArgument x:TypeArguments="p3:ClassifierResult" Name="ClassifierResult" />
+                  <OutArgument x:TypeArguments="p4:ClassifierResult">
+                    <DelegateArgumentReference x:TypeArguments="p4:ClassifierResult">
+                      <DelegateOutArgument x:TypeArguments="p4:ClassifierResult" Name="ClassifierResult" />
                     </DelegateArgumentReference>
                   </OutArgument>
                 </p2:IntelligentKeywordClassifier.ClassifierResult>
                 <p2:IntelligentKeywordClassifier.DocumentObjectModel>
-                  <InArgument x:TypeArguments="p4:Document">
-                    <DelegateArgumentValue x:TypeArguments="p4:Document">
-                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                  <InArgument x:TypeArguments="p3:Document">
+                    <DelegateArgumentValue x:TypeArguments="p3:Document">
+                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                     </DelegateArgumentValue>
                   </InArgument>
                 </p2:IntelligentKeywordClassifier.DocumentObjectModel>
@@ -304,9 +313,9 @@
                   </InArgument>
                 </p2:IntelligentKeywordClassifier.DocumentText>
                 <p2:IntelligentKeywordClassifier.DocumentTypes>
-                  <InArgument x:TypeArguments="p3:ClassifierDocumentType[]">
-                    <DelegateArgumentValue x:TypeArguments="p3:ClassifierDocumentType[]">
-                      <DelegateInArgument x:TypeArguments="p3:ClassifierDocumentType[]" Name="DocumentTypes" />
+                  <InArgument x:TypeArguments="p4:ClassifierDocumentType[]">
+                    <DelegateArgumentValue x:TypeArguments="p4:ClassifierDocumentType[]">
+                      <DelegateInArgument x:TypeArguments="p4:ClassifierDocumentType[]" Name="DocumentTypes" />
                     </DelegateArgumentValue>
                   </InArgument>
                 </p2:IntelligentKeywordClassifier.DocumentTypes>
@@ -338,16 +347,16 @@
                   <p2:ClassifyDocumentScope.Classifiers>
                     <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="234,210" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_4" LearningFilePath="DocumentProcessing\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
                       <p2:IntelligentKeywordClassifier.ClassifierResult>
-                        <OutArgument x:TypeArguments="p3:ClassifierResult">
-                          <DelegateArgumentReference x:TypeArguments="p3:ClassifierResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_11">
-                            <DelegateOutArgument x:TypeArguments="p3:ClassifierResult" Name="ClassifierResult" />
+                        <OutArgument x:TypeArguments="p4:ClassifierResult">
+                          <DelegateArgumentReference x:TypeArguments="p4:ClassifierResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_11">
+                            <DelegateOutArgument x:TypeArguments="p4:ClassifierResult" Name="ClassifierResult" />
                           </DelegateArgumentReference>
                         </OutArgument>
                       </p2:IntelligentKeywordClassifier.ClassifierResult>
                       <p2:IntelligentKeywordClassifier.DocumentObjectModel>
-                        <InArgument x:TypeArguments="p4:Document">
-                          <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_62">
-                            <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                        <InArgument x:TypeArguments="p3:Document">
+                          <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_62">
+                            <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                           </DelegateArgumentValue>
                         </InArgument>
                       </p2:IntelligentKeywordClassifier.DocumentObjectModel>
@@ -366,9 +375,9 @@
                         </InArgument>
                       </p2:IntelligentKeywordClassifier.DocumentText>
                       <p2:IntelligentKeywordClassifier.DocumentTypes>
-                        <InArgument x:TypeArguments="p3:ClassifierDocumentType[]">
-                          <DelegateArgumentValue x:TypeArguments="p3:ClassifierDocumentType[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_65">
-                            <DelegateInArgument x:TypeArguments="p3:ClassifierDocumentType[]" Name="DocumentTypes" />
+                        <InArgument x:TypeArguments="p4:ClassifierDocumentType[]">
+                          <DelegateArgumentValue x:TypeArguments="p4:ClassifierDocumentType[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_65">
+                            <DelegateInArgument x:TypeArguments="p4:ClassifierDocumentType[]" Name="DocumentTypes" />
                           </DelegateArgumentValue>
                         </InArgument>
                       </p2:IntelligentKeywordClassifier.DocumentTypes>
@@ -460,7 +469,7 @@
                           <TryCatch.Try>
                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1001,5501" sap2010:WorkflowViewState.IdRef="Sequence_27">
                               <Sequence.Variables>
-                                <Variable x:TypeArguments="sd1:DataSet" Name="resultDT" />
+                                <Variable x:TypeArguments="sd2:DataSet" Name="resultDT" />
                                 <Variable x:TypeArguments="x:String" Name="queClientID" />
                                 <Variable x:TypeArguments="x:String" Name="queClientIDConfidence" />
                                 <Variable x:TypeArguments="x:String" Name="queIssueDate" />
@@ -554,9 +563,9 @@
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentBounds>
                                                 <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                  <InArgument x:TypeArguments="p4:Document">
-                                                    <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_69">
-                                                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                  <InArgument x:TypeArguments="p3:Document">
+                                                    <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_69">
+                                                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                     </DelegateArgumentValue>
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -608,9 +617,9 @@
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentBounds>
                                                 <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                  <InArgument x:TypeArguments="p4:Document">
-                                                    <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_75">
-                                                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                  <InArgument x:TypeArguments="p3:Document">
+                                                    <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_75">
+                                                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                     </DelegateArgumentValue>
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -662,9 +671,9 @@
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentBounds>
                                                 <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                  <InArgument x:TypeArguments="p4:Document">
-                                                    <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_81">
-                                                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                  <InArgument x:TypeArguments="p3:Document">
+                                                    <DelegateArgumentValue x:TypeArguments="p3:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_81">
+                                                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                     </DelegateArgumentValue>
                                                   </InArgument>
                                                 </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -758,9 +767,9 @@
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentBounds>
                                                         <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                          <InArgument x:TypeArguments="p4:Document">
-                                                            <DelegateArgumentValue x:TypeArguments="p4:Document">
-                                                              <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                          <InArgument x:TypeArguments="p3:Document">
+                                                            <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                                              <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                             </DelegateArgumentValue>
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -812,9 +821,9 @@
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentBounds>
                                                         <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                          <InArgument x:TypeArguments="p4:Document">
-                                                            <DelegateArgumentValue x:TypeArguments="p4:Document">
-                                                              <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                          <InArgument x:TypeArguments="p3:Document">
+                                                            <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                                              <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                             </DelegateArgumentValue>
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -866,9 +875,9 @@
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentBounds>
                                                         <p7:MachineLearningExtractor.DocumentObjectModel>
-                                                          <InArgument x:TypeArguments="p4:Document">
-                                                            <DelegateArgumentValue x:TypeArguments="p4:Document">
-                                                              <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                                          <InArgument x:TypeArguments="p3:Document">
+                                                            <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                                              <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                                                             </DelegateArgumentValue>
                                                           </InArgument>
                                                         </p7:MachineLearningExtractor.DocumentObjectModel>
@@ -992,8 +1001,8 @@
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="ses.coi.acord23" DisplayName="DataTransalation_ACORD23.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="341,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="DataTransalation_ACORD23.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="p5:ExtractionResult" x:Key="in_ExtractionResult">[ExtractionResult]</InArgument>
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtKeywordConfig" />
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtClientConfig" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtKeywordConfig" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtClientConfig" />
                                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_QIPSFields_Accord23">[QIPSFields]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_IssueDateConfidenceScore">[queueIssueDateConfidence]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_ClientIDConfidenceScore">[queClientIDConfidence]</OutArgument>
@@ -1004,8 +1013,8 @@
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="p5:ExtractionResult" x:Key="in_ExtractionResult">[ExtractionResult]</InArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_Fields" />
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtKeywordConfig" />
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtClientConfig" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtKeywordConfig" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtClientConfig" />
                                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_QIPSFields_Accord23">[QIPSFields]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_IssueDateConfidenceScore">[queueIssueDateConfidence]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_ClientIDConfidenceScore">[queClientIDConfidence]</OutArgument>
@@ -1015,9 +1024,9 @@
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="ses.coi.acord27" DisplayName="DataTransalation_ACORD27.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="341,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="DataTransalation_ACORD27.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="p5:ExtractionResult" x:Key="in_ExtractionResult">[ExtractionResult]</InArgument>
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtKeywordConfig" />
-                                          <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtClientConfig" />
-                                          <OutArgument x:TypeArguments="sd1:DataTable" x:Key="out_dtQIPSFields" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtKeywordConfig" />
+                                          <InArgument x:TypeArguments="sd2:DataTable" x:Key="in_dtClientConfig" />
+                                          <OutArgument x:TypeArguments="sd2:DataTable" x:Key="out_dtQIPSFields" />
                                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_QIPSFields">[QIPSFields]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_ClientConfidence">[queClientIDConfidence]</OutArgument>
@@ -1054,11 +1063,11 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </p6:ExportExtractionResults>
-                                    <ui:ForEach x:TypeArguments="sd1:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[resultDT.Tables]">
+                                    <ui:ForEach x:TypeArguments="sd2:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[resultDT.Tables]">
                                       <ui:ForEach.Body>
-                                        <ActivityAction x:TypeArguments="sd1:DataTable">
+                                        <ActivityAction x:TypeArguments="sd2:DataTable">
                                           <ActivityAction.Argument>
-                                            <DelegateInArgument x:TypeArguments="sd1:DataTable" Name="table" />
+                                            <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="table" />
                                           </ActivityAction.Argument>
                                           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,320.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -1127,8 +1136,8 @@
                                   <Variable x:TypeArguments="x:String" Name="qipsDBName" />
                                   <Variable x:TypeArguments="x:String" Name="qipsUserName" />
                                   <Variable x:TypeArguments="ss:SecureString" Name="qipsPassword" />
-                                  <Variable x:TypeArguments="sd1:DataTable" Name="dtTestInput" />
-                                  <Variable x:TypeArguments="sd1:DataTable" Name="dtOutput" />
+                                  <Variable x:TypeArguments="sd2:DataTable" Name="dtTestInput" />
+                                  <Variable x:TypeArguments="sd2:DataTable" Name="dtOutput" />
                                   <Variable x:TypeArguments="x:Boolean" Name="boolQIPSScreenExist" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
@@ -1400,9 +1409,9 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop through test input data for multiple documents and create QIPS record for one document after other. &#xA;This is for testing only. Loop can be removed or modified according to the project achitecture." DataTable="[dtTestInput]" DisplayName="For Each Input document" sap:VirtualizedContainerService.HintSize="338,199.333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                         <ui:ForEachRow.Body>
-                                          <ActivityAction x:TypeArguments="sd1:DataRow">
+                                          <ActivityAction x:TypeArguments="sd2:DataRow">
                                             <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="row" />
+                                              <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="row" />
                                             </ActivityAction.Argument>
                                             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,1696.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                                               <sap:WorkflowViewStateService.ViewState>
