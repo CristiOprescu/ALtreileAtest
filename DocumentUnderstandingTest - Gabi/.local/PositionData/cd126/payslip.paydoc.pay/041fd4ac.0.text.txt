@@ -1,0 +1,92 @@
+PAY GROUP: AELIA UK Ltd COST CENTRE: B0314 FINANCE
+
+Pavard, Benjamin Employee Code: 3242 Business Unit: Finance (B0314) Kensington
+
+EARNINGS Salary Expense Claim Salary Sacrifice
+
+Units
+
+Rate 43,482.600000
+
+DEDUCTIONS TAX - Code 1255L EE NI - Category A
+
+EMPLOYER CONTRIBUTIONS ER NI - Category A Salary Sacrifice EES Salary Sacrifiæ ERS
+
+AMOUNT PAID Eaminas Deductions Net Pav Brouaht Forward Amount Paid Forward
+
+Tax Month 12
+
+NI Number. ZB123456C
+
+Amount 3,623.55 66.03 -181.18 3,508.40
+
+479.20 317.44 796.64
+
+373.34
+
+181.18
+
+181.18
+
+735.70
+
+3,508.40 796.64 2,711.76 0.00 2,711.76
+
+Kimpembe, Presnel Employee 614 Business Unit: Finance (B0314) Lwation: Kensington
+
+EARNINGS Salary Salary Sacrifice
+
+Units
+
+DEDUCTIONS TAX - Code 1255L EE NI - Category A
+
+EMPLOYER CONTRIBUTIONS ER NI - Category A Salary Sacrifice EES Salary Sacrifice ERS
+
+AMOUNT PAID Eaminas
+
+Net Pav Brouaht Forward Amount Paid Carried Forward
+
+Rate 43,482.600000
+
+Tax Month 12 NI Number.
+AB123456B
+
+Amount 3,623.55 -181.18 3,442.37
+
+479.20 317.44 796.64
+
+373.34
+
+181.18
+
+181.18
+
+735.70
+
+3,442.37 796.64 2,645.73 0.00 2,645.73
+
+Mbappe, Kylian Employee Code: 1551 Business Unit: Finance (80314) Location: Kensington
+
+EARNINGS Salary Expense Claim Salary Sacrifiæ
+
+Units
+
+DEDUCTIONS TAX - Code 1257L EE NI - Category A
+
+EMPLOYER CONTRIBUTIONS ER NI - Category A Salary Sacrifice EES Salary Sacrifice ERS
+
+AMOUNT PAID Eaminas Deductions Net Pav Brouaht Forward Amount Paid Carried Forward
+
+COMPANY: Aelia UK Ltd
+
+Tax Month 12 NI Number: CB123456A
+
+Rate 21 ,420.oooooo
+
+Amount 1,785.00 233.00 -89.25 1,928.75
+
+129.60 107.85 237.45
+
+132.31 89.25 53.55 275.11
+
+1 ,928.75 237.45 1 ,691.30 0.00 1,691.30
