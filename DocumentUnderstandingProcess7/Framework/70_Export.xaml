@@ -1,0 +1,869 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_70_Export" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="The results of the data extraction process." Name="in_ExtractionResults" Type="InArgument(p:ExtractionResult)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property sap2010:Annotation.AnnotationText="Used to control the number of attempts of retrying in case of a system exception." Name="in_MaxAttempts" Type="InArgument(x:Int32)" />
+    <x:Property sap2010:Annotation.AnnotationText="Used to control the amount of time between retries in the Retry Scope activity." Name="in_RetryInterval" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="in_TargetFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_SupplierName" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1042,4390</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_70_Export_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Post-extraction &amp; Data Export&#xA;&#xA;Post extraction - any logic that must be executed after data extraction and prior to the data export belongs here (eg: format the data according to an export schema)&#xA;&#xA;Data Export - output the data to make it usable by the Business users or by subsequent processes. We recommend using UiPath's DataService." DisplayName="Export" sap:VirtualizedContainerService.HintSize="803,4285" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Used to store the path to the file where the extracted data will be saved." Name="outputPath" />
+      <Variable x:TypeArguments="sd:DataSet" sap2010:Annotation.AnnotationText="Used to store the exported data from the ExtractionResults in the Export Extraction Results activity." Name="exportDataSet" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Start Data Export" sap:VirtualizedContainerService.HintSize="761,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_Config(&quot;LogMessage_DataExportStart&quot;) + &quot; &quot; + in_ExtractionResults.ResultsDocument.DocumentTypeId + &quot; (pag &quot; +  (in_ExtractionResults.ResultsDocument.Bounds.StartPage + 1).ToString + &quot;-&quot; + (in_ExtractionResults.ResultsDocument.Bounds.StartPage + in_ExtractionResults.ResultsDocument.Bounds.PageCount).ToString + &quot;)&quot; + Environment.NewLine + in_Config(&quot;logKey&quot;)]" />
+    <ui:Comment DisplayName="Comment - Example Export" sap:VirtualizedContainerService.HintSize="761,131" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Please note that the below example is intended for ilustrative purposes only. The export to excel was just an example. Ideally you would want to use the data extracted in another process." />
+    <Assign sap2010:Annotation.AnnotationText="Adding the page range here ensures a unique export name in case PDF splitting is DISABLED" DisplayName="Assign Output File Name" sap:VirtualizedContainerService.HintSize="761,117" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[outputPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(in_config("ExportsFolder"), in_ExtractionResults.DocumentId + "_" + (in_ExtractionResults.ResultsDocument.Bounds.StartPage + 1).ToString + "-"+(in_ExtractionResults.ResultsDocument.Bounds.StartPage + in_ExtractionResults.ResultsDocument.Bounds.PageCount).ToString + ".xlsx")]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <p1:ExportExtractionResults sap2010:Annotation.AnnotationText="in_ExtractionResults.AsDataSet() method can also be used" DataSet="[exportDataSet]" DisplayName="Export Extraction Results - Export" ExtractionResult="[in_ExtractionResults]" sap:VirtualizedContainerService.HintSize="761,215" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p1:ExportExtractionResults>
+    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Supplier Name Defined Here for All Suppliers" DisplayName="Supplier Switch" Expression="[in_SupplierName]" sap:VirtualizedContainerService.HintSize="761,1903" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch.Default>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">Please Define Supplier Name in Switch Case Activity</InArgument>
+          </Assign.Value>
+        </Assign>
+      </Switch.Default>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign x:Key="AerosphereInternational.Invoice.AerosphereInternationalInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Aerosphere International Spare Parts Trading LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="GEAviation.Invoice.GEAviationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">GE Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="PilatusAircraft.Invoice.PilatusAircraftInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">PILATUS AIRCRAFT LTD</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AirbusHelicopters.AirbusHelicoptersInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AIRBUS HELICOPTERS</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AmmrocLLC.AmmrocLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AMMROC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.BlueAerospace.BlueAerospaceInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">BLUE AEROSPACE, LLC.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.BoeingDistributionServices.BoeingDistributionServicesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Boeing Distribution Services Inc.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ContinentalAircraftSupport.ContinentalAircraftSupportInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Continental Aircraft Support, Inc.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.DassaultAviation.DassaultAviationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Dassault Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.MirageAircraftServices.MirageAircraftServicesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Mirage Air craft Services</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.PPGIndustriesMiddleEastFZE.PPGIndustriesMiddleEastFZEInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">PPG Industries Middle East FZE</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WollschlagerTechnicalSystemsLLC.WollschlagerTechnicalSystemsLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Wollschlaeger Technical Systems LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.UnicalDefence.UnicalDefenceInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["UNICAL DEFENSE, INC"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.JMTestSystems.JMTestSystemsInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["JM Test Systems Inc"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WollschlagerTechnicalSystemsLLC.WollschlagerTechnicalSystemLLCPrepayment" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Wollschlaeger Technical Systems LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.DassaultAviation.DassaultAviationPrepayment" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Dassault Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.GEAviation.GEAviationPrepayment" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">GE Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AerosphereInternational.AerosphereInternationalCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Aerosphere International Spare Parts Trading LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AmmrocLLC.AmmrocLLCCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AMMROC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.UnicalDefense.UnicalDefenseCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["UNICAL DEFENSE, INC"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WollschlagerTechnicalSystemsLLC.WollschlagerTechnicalSystemLLCCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Wollschlaeger Technical Systems LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AirbusHelicopters.AirbusHelicoptersPrepayment" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AIRBUS HELICOPTERS</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AARCorporation.AARCorporationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AAR International, Inc.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AirDynamicsTrading.AirDynamicsTradingInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Air Dynamics Trading</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AirchemConsumablesFZCO.AirchemConsumablesFZCOInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Airchem Consumables FZCO</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ArrowAviationServicesFZE.ArrowAviationServicesFZEInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Arrow Aviation Services FZE</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ArrowDynamicsLLC.ArrowDynamicsLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Arrow Dynamics LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AvAirInc.AvAirIncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AvAir Inc</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AviationDefenceSparesLtd.AviationDefenceSparesLtdInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Aviation &amp; Defence Spares Ltd</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.BoeingDistributionInc.BoeingDistributionIncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Boeing Distribution Inc</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.DercoAerospace.DercoAerospaceInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Derco Aerospace</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.DIMOCorp.DIMOCorpInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["DIMO Corp"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.HighGradeEquipmentCOLLC.HighGradeEquipmentCOLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">High Grade Equipment CO.LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.HoneywellInternational.HoneywellInternationalInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Honeywell International</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.INKALTECHNICALSOLUTIONS.INKALTECHNICALSOLUTIONSInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">INKAL TECHNICAL SOLUTIONS</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.IOMAXUSAInc.IOMAXUSAIncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">IOMAX USA Inc</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.S3AeroDefense.S3AeroDefenseInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">S3 AeroDefense</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SafranAircraftEngines.SafranAircraftEnginesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Safran Aircraft Engines</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SAFRANHELICOPTERENGINESSAS.SAFRANHELICOPTERENGINESSASInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">SAFRAN HELICOPTER ENGINES SAS</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SaywellInternational.SaywellInternationalInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Saywell International</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SharpAviationInternational.SharpAviationInternationalInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Sharp Aviation International</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SherwoodAviation.SherwoodAviationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Sherwood Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.TheKanooGroup.TheKanooGroupInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">The Kanoo Group</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ELITEINTERNATIONALTRAVELCENTERLLC.ELITEINTERNATIONALTRAVELCENTERLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">ELITE INTERNATIONAL TRAVEL CENTER LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.CorporateConnectionGeneralTradingLLC.CorporateConnectionGeneralTradingLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Corporate Connection General Trading LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.EmeraldTradingEnterprisesLLC.EmeraldTradingEnterprisesLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Emerald Trading Enterprises LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.GulfAeroSpaceCompany(GACO)LLC.GulfAeroSpaceCompany(GACO)LLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Gulf Aero Space Company (GACO) LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.BoeingDistributionInc.BoeingDistributionIncCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Boeing Distribution Inc</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SafranElectronicsDefense.SafranElectronicsDefenseInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Safran Electronics &amp; Defense</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.RockwellCollinsInc.RockwellCollinsIncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["ROCKWELL COLLINS INC"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.VitalLinkEuropeLtd.VitalLinkEuropeLtdInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Vital Link Europe Ltd</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AL-RUWAISINDUSTRIALGASESCOLLC.AL-RUWAISINDUSTRIALGASESCOLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AL-RUWAIS INDUSTRIAL GASES CO. LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AIRBUSDEFENCEANDSPACESAU.AIRBUSDEFENCEANDSPACESAUInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AIRBUS DEFENCE AND SPACE S.A.U.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AEROSPACEMAINTENANCESOLUTIONS.AEROSPACEMAINTENANCESOLUTIONSInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AEROSPACE MAINTENANCE SOLUTIONS</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SECAMIC.SECAMICInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">SECAMIC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.SummitAerospace.SummitAerospaceInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Summit Aerospace</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WescoAircraftEMEALimited.WescoAircraftEMEALimitedInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Wesco Aircraft EMEA Limited</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ArabianCalibrationDevRepCoLLC.ArabianCalibrationDevRepCoLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_60">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Arabian Calibration Dev. Rep. Co. LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.EtihadAirwaysEngineeringLLC.EtihadAirwaysEngineeringLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Etihad Airways Engineering L.L.C</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.TechnicalInspectionBureauLLC.TechnicalInspectionBureauLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Technical Inspection Bureau LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.DefenseTechnologyEquipment,.DefenseTechnologyEquipment,Invoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Defense Technology Equipment,</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AgustaWestlandAviationServicesLLC.AgustaWestlandAviationServicesLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Agusta Westland Aviation Services LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AgustaWestlandAviationServicesLLC.AgustaWestlandAviationServicesLLCCreditNote" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_65">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Agusta Westland Aviation Services LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ConsolidatedAircraftSupplyCompany,Inc.ConsolidatedAircraftSupplyCompany,IncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Consolidated Aircraft Supply Company, Inc.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.UnitedEnterprises.UnitedEnterprisesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">United Enterprises</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.VHLAircraft,Inc.VHLAircraft,IncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">VHL Aircraft, Inc</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WescoManufacturingInc.WescoManufacturingIncInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Wesco Manufacturing Inc.</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.WorldWideInspectionAndCalibrationServices.WorldWideInspectionAndCalibrationServicesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">World Wide Inspection And Calibration Services</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.AventureInternationalAviationServices.AventureInternationalAviationServicesInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_71">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Aventure International Aviation Services</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.GRAINGER.GRAINGERInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_72">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">GRAINGER</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.GEAviationSystemsLLC.GEAviationSystemsLLCInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_73">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">GE Aviation Systems LLC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.GMSInternationalCorporation.GMSInternationalCorporationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_74">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">GMS International Corporation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.YinglingAviation.YinglingAviationInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_75">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Yingling Aviation</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ProptechAeroLtd.ProptechAeroLtdInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_76">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Proptech Aero Ltd</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Invoices.ThalesSixGTSFranceSAS.ThalesSixGTSFranceSASInvoice" DisplayName="in_SupplierName Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_SupplierName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Thales Six GTS France SAS</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Switch>
+    <ui:RetryScope sap2010:Annotation.AnnotationText="Exports could be stored in a shared location. The retry mechanism is used to compensate for minor fluctuatios in network stability and other recoverable issues." DisplayName="Retry Scope - Export Data" sap:VirtualizedContainerService.HintSize="761,872" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_MaxAttempts]" RetryInterval="[in_RetryInterval]">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <ui:ForEach x:TypeArguments="sd:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each Exported Table" sap:VirtualizedContainerService.HintSize="434,561" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[exportDataSet.Tables]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="sd:DataTable">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataTable" Name="table" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Exporting Data" sap:VirtualizedContainerService.HintSize="376,438" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[table.Rows.Count&gt;0]" DisplayName="If Export Data Not available" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Else>
+                      <Throw Exception="[new Exception(&quot;Supplier Template is not defined in the Extract Data&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </If.Else>
+                  </If>
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim newColumn As New Data.DataColumn(&quot;TargetFile&quot;, GetType(System.String))     &#xA;newColumn.DefaultValue = in_TargetFile&#xA;table.Columns.Add(newColumn) &#xA;table.Rows(0)(&quot;SupplierName&quot;) = in_SupplierName" DisplayName="Invoke code Add Column Target File &amp; Assign Value" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                    <ui:InvokeCode.Arguments>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="table">[table]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TargetFile">[in_TargetFile]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SupplierName">[in_SupplierName]</InArgument>
+                    </ui:InvokeCode.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeCode>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,264" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Since we are running inside a parallel for each, it is NOT advisable to use Excel Application Scope nor other Excel activities here!" DataTable="[table]" DisplayName="Write Range - Write Table to XLSX" sap:VirtualizedContainerService.HintSize="334,172" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[table.TableName]" StartingCell="A1" WorkbookPath="[outputPath]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:WriteRange>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEach>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RetryScope>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="729,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_SupplierName]" />
+    <If Condition="[in_SupplierName=&quot;PPG Industries Middle East FZE&quot;]" DisplayName="If Supplier Date Field Resolved" sap:VirtualizedContainerService.HintSize="729,290" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items to Performer Queue" FolderPath="[in_Config(&quot;DocumentUnderstandingQueuePath&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_3" QueueItemsDataTable="[exportDataSet.Tables(0).AsEnumerable().Take(1).CopyToDataTable]" QueueName="[in_Config(&quot;PerformerQueueName&quot;).ToString.Trim]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:BulkAddQueueItems>
+      </If.Then>
+      <If.Else>
+        <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items to Performer Queue" FolderPath="[in_Config(&quot;DocumentUnderstandingQueuePath&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_2" QueueItemsDataTable="[exportDataSet.Tables(1).AsEnumerable().Take(1).CopyToDataTable]" QueueName="[in_Config(&quot;PerformerQueueName&quot;).ToString.Trim]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:BulkAddQueueItems>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message Data Inerted into Performer Queue" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_Config(&quot;LogMessage_InvoicePostProcessing_PerformerData&quot;)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
